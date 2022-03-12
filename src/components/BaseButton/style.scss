@@ -1,0 +1,13 @@
+.button {
+    padding: .7em 1.7em;
+    background-color: purple;
+    font-size: 1rem;
+    border-radius: 8px;
+    color: white;
+    transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.8;
+    }
+    
+}

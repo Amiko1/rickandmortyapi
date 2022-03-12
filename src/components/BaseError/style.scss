@@ -1,0 +1,25 @@
+.error {
+    padding: 1.2em 4em;
+    background-color: rgb(226, 55, 55);
+    border-radius: 8px;
+    position: fixed;
+    left: 2em;
+    bottom: 2em;  
+    font-size: 1.1rem;
+    color: white;
+    font-size: clamp(1rem, 2.5vw, 1.2rem); 
+    animation: taadaa 1s ease-in-out;
+    z-index: 1;
+
+}
+
+@keyframes taadaa { 
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  

@@ -1,0 +1,88 @@
+
+@function toRem($value) {
+    $remValue: calc($value / 16) + rem;
+    @return $remValue;
+}
+
+
+@mixin _headline-base() {
+    font-family: "New Rocker", cursive;
+    
+}
+  
+@mixin headline1() {
+    letter-spacing: -1.5px;
+    font-size: toRem(96);
+    font-weight: light;
+}
+  
+@mixin headline2() {
+    letter-spacing: -0.5px;
+    font-size: toRem(60);
+    font-weight: light;
+}
+  
+@mixin headline3() {
+    letter-spacing: 0px;
+    font-size: toRem(48);
+    font-weight: normal;
+}
+  
+@mixin headline4() {
+    letter-spacing: 0.25px;
+    font-size: toRem(34);
+    font-weight: normal;
+
+}
+  
+@mixin headline5() {
+    letter-spacing: 0px;
+    font-size: toRem(24);
+    font-weight: normal;    
+
+}
+  
+@mixin headline6() {
+    letter-spacing: 0.15px;
+    font-size: toRem(20);
+    font-weight: medium;  
+
+}
+
+@mixin subtitle1() {
+    letter-spacing: 0.15px;
+    font-size: toRem(16);
+    font-weight: normal;    
+}
+
+@mixin subtitle2() {
+    letter-spacing: 0.1px;
+    font-size: toRem(14);
+    font-weight: medium;
+}
+
+@mixin body1() {
+    letter-spacing: 0.5px;
+    font-size: toRem(14);
+    font-weight: normal; 
+}
+
+  
+@mixin body2() {
+    letter-spacing: 0.25px;
+    font-size: toRem(14);
+    font-weight: normal; 
+}
+ 
+@mixin caption() {
+    letter-spacing: 0.4px;
+    font-size: toRem(12);
+    font-weight: normal; 
+}
+
+@mixin overline() {
+    letter-spacing: 1.5px;
+    font-size: toRem(10);
+    font-weight: normal;
+}
+ 
