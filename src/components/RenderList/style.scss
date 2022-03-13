@@ -1,18 +1,17 @@
 .charlist {
+    margin-top: 2em !important;
+    width: 90%;
+    min-width: 200px;
+    margin-left:1em;
     display: flex;
     padding: 1.5em;
-    gap: 3em;
+    gap: 3.5em;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 10px;
-    margin-top: 2em;
-    transition: transform .4s ease-in-out;
-    flex-basis:48%;
+    flex-basis:45%;
     background-color: white;
-    cursor: pointer;
-    &:hover {
-        transform: scale(1.1);
-       
-    }
+    
+
     &__img {
         max-width: 6em;
         border-radius: 8px;
@@ -23,12 +22,13 @@
     }
 }
 
-
-
+.List {
+    margin-top: 2em;
+}
 
 
 @media (max-width: 881px) {
     .charlist {
-        flex-basis: 100%;
+        flex-basis: 90%;
     }
 }

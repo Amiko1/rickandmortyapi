@@ -1,8 +1,9 @@
 import WebFont from 'webfontloader';
 import { useEffect } from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import CharacterList from './components/CharacterList';
-
+import CharacterList from './views/CharacterList';
+import Profile from './views/Profile';
 
 function App() {
   useEffect(() => {
@@ -13,9 +14,17 @@ function App() {
     });
   }, []);
   return (
-    <main className="container">
-      <CharacterList />
-    </main>
+    <div className='container'>
+      <BrowserRouter>
+
+        <Routes>
+          <Route path="/profile/:id" element={<Profile />} />
+          <Route path="/" element={<CharacterList />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+
+
   );
 }
 
