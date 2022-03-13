@@ -1,6 +1,7 @@
 import './style.scss'
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const AutoComplete = ({ data }) => {
 
@@ -28,7 +29,10 @@ const AutoComplete = ({ data }) => {
                     suggestion.length > 0 && <div className='suggestion-container'>
                         {
                             suggestion.map((list) => (
-                                <p key={list.id} className='autocomplete__suggestions'>{list.name}</p>
+
+                                <Link key={list.id} className='autocomplete__suggestions' to={`/profile/${list.id}`} >
+                                    {list.name}
+                                </Link>
                             ))
                         }
                     </div>
