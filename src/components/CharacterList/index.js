@@ -1,45 +1,24 @@
 import './style.scss'
+import AutoComplete from '../AutoComplete';
 import { useEffect, useState } from 'react'
-import BaseError from '../BaseError';
-
-let localCache = {};
 
 const CharacterList = () => {
-
     let [charList, setCharList] = useState([]);
-    let [error, setError] = useState(false);
-    let [filterValue, setFilterValue] = useState("");
 
     useEffect(() => {
-        if (localCache[filterValue]) {
-            setCharList(localCache[filterValue])
-            setError(false)
-        } else {
-            fetchData(`https://rickandmortyapi.com/api/character/?name=${filterValue}`);
-        }
-
-    }, [filterValue]);
+        fetchData(`https://rickandmortyapi.com/api/character`);
+    }, []);
 
     async function fetchData(url) {
         let response = await fetch(url);
         let user = await response.json();
-
-        if (!user.error) {
-            setError(false)
-            setCharList(user.results)
-            localCache[filterValue] = user.results;
-        } else {
-            setError(true)
-        }
+        setCharList(user.results)
     }
 
     return (
         <>
-            <div className='filter'>
-                <input onChange={event => setFilterValue(event.target.value)} placeholder='FILTER' className="filter__input" />
-            </div>
-            {error && <BaseError msg="Cant Find this Character" />}
-            {!error && <div className='flex flex-wrap'>
+            <AutoComplete data={charList} />
+            <div className='flex flex-wrap'>
                 {
                     charList.map((list) => (
                         <article key={list.id} className="charlist">
@@ -51,9 +30,8 @@ const CharacterList = () => {
                         </article>
                     ))
                 }
-            </div >}
+            </div >
         </>
     );
 }
-
 export default CharacterList;
